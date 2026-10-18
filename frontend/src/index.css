@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0A090F;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', system-ui, sans-serif;
+  color: #FBFBFE;
+  background-color: #0A090F;
+  background-image: 
+    radial-gradient(1100px 700px at 85% -5%, rgba(138, 43, 226, 0.15), transparent 60%),
+    radial-gradient(900px 600px at 10% 25%, rgba(0, 255, 135, 0.10), transparent 55%),
+    radial-gradient(1000px 800px at 70% 85%, rgba(255, 107, 0, 0.08), transparent 60%),
+    linear-gradient(180deg, #0A090F 0%, #0E0D17 50%, #08070C 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Hide spin buttons on number inputs */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A090F;
+}
+::-webkit-scrollbar-thumb {
+  background: #252336;
+  border-radius: 9999px;
+  border: 2px solid #0A090F;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8A2BE2;
+}
+
+@layer components {
+  /* Glassmorphism Styles */
+  .glass-panel {
+    @apply rounded-3xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-2xl
+      shadow-[0_20px_50px_rgba(0,0,0,0.6)];
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/[0.08] bg-dark-800/60 backdrop-blur-xl
+      transition-all duration-300 hover:border-lime/30 hover:shadow-glow-lime;
+  }
+
+  .glass-pill {
+    @apply rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-md px-4 py-1.5
+      text-xs font-semibold tracking-wide text-silk transition-all duration-200;
+  }
+
+  /* Cyber Input Fields */
+  .cyber-field {
+    @apply w-full rounded-xl border border-white/10 bg-dark-900/80 px-4 py-3 font-mono text-lg
+      text-silk placeholder-white/30 outline-none transition-all duration-200
+      focus:border-lime focus:ring-1 focus:ring-lime focus:shadow-glow-lime;
+  }
+
+  /* Segmented Buttons */
+  .seg-btn {
+    @apply rounded-xl border border-white/[0.08] bg-dark-800/80 px-4 py-2 text-sm font-semibold text-white/70
+      transition-all duration-200 hover:border-white/20 hover:text-silk outline-none
+      focus-visible:ring-2 focus-visible:ring-lime;
+  }
+  .seg-btn[aria-checked='true'] {
+    @apply border-lime bg-lime/10 text-lime shadow-glow-lime;
+  }
+
+  /* Glow Utilities */
+  .neon-border-lime {
+    border-color: rgba(0, 255, 135, 0.4);
+    box-shadow: 0 0 20px -3px rgba(0, 255, 135, 0.3);
+  }
+  .neon-border-purple {
+    border-color: rgba(138, 43, 226, 0.4);
+    box-shadow: 0 0 25px -3px rgba(138, 43, 226, 0.3);
+  }
+
+  /* Gradient Text Utilities */
+  .text-gradient-lime {
+    @apply bg-gradient-to-r from-lime via-[#55ff99] to-turmeric bg-clip-text text-transparent;
+  }
+  .text-gradient-cyber {
+    @apply bg-gradient-to-r from-cyber-purple via-coral to-tangerine bg-clip-text text-transparent;
+  }
+  .text-gradient-white {
+    @apply bg-gradient-to-b from-white via-white/90 to-white/60 bg-clip-text text-transparent;
+  }
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.03); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--d, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
