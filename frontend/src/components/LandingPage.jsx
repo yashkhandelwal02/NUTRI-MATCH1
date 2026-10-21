@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   Sparkles,
   ArrowRight,
@@ -101,7 +101,7 @@ export default function LandingPage({ onStartPersonalize, onExploreFoods, hasPla
         {/* Hero Subtitle */}
         <p className="reveal mt-6 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl">
           Say goodbye to generic meal plans. NutriMatch deploys clinical Mifflin-St Jeor biometric equations 
-          and scikit-learn vector normalization to generate tailor-made daily menus from a verified 1,729-food dataset.
+          and scikit-learn vector normalization to generate tailor-made daily menus from a verified 1,630-food dataset.
         </p>
 
         {/* Dual CTAs */}
@@ -118,7 +118,7 @@ export default function LandingPage({ onStartPersonalize, onExploreFoods, hasPla
             onClick={onExploreFoods}
             className="flex items-center gap-2.5 rounded-2xl border border-white/15 bg-white/[0.04] px-7 py-4 text-sm font-bold tracking-wide text-silk backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-white/[0.08]"
           >
-            <span>Explore 1,729 Foods</span>
+            <span>Explore 1,630 Foods</span>
             <ChevronRight className="h-4 w-4 text-white/50" />
           </button>
 
@@ -136,7 +136,7 @@ export default function LandingPage({ onStartPersonalize, onExploreFoods, hasPla
         {/* Hero Metric Pills */}
         <div className="reveal mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           {[
-            { label: 'Verified Foods', val: '1,729+', icon: Apple, color: 'text-lime' },
+            { label: 'Verified Foods', val: '1,630+', icon: Apple, color: 'text-lime' },
             { label: 'Cosine Match Score', val: '98.5%', icon: ShieldCheck, color: 'text-cyber-violet' },
             { label: 'Portion Control', val: '0.5x - 2.0x', icon: Layers, color: 'text-tangerine' },
             { label: 'Hallucination Rate', val: '0.0%', icon: Cpu, color: 'text-coral' },
@@ -246,7 +246,7 @@ export default function LandingPage({ onStartPersonalize, onExploreFoods, hasPla
                   onClick={onStartPersonalize}
                   className="mt-5 w-full rounded-xl bg-white/[0.06] py-2.5 text-xs font-bold uppercase tracking-wider text-silk transition hover:bg-lime hover:text-obsidian"
                 >
-                  Generate Plan For My Body →
+                  Generate Plan For My Body â†’
                 </button>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default function LandingPage({ onStartPersonalize, onExploreFoods, hasPla
             {
               icon: HeartPulse,
               title: 'Micronutrient Auditing',
-              desc: 'Beyond macros: queries Dietary Fibres, Calcium, Iron, Vitamin C, and Sodium across 1,729 verified laboratory records.',
+              desc: 'Beyond macros: queries Dietary Fibres, Calcium, Iron, Vitamin C, and Sodium across 1,630 verified laboratory records.',
               accent: 'coral',
               pill: '17 Food Dimensions',
             },
@@ -345,7 +345,7 @@ export default function LandingPage({ onStartPersonalize, onExploreFoods, hasPla
               {
                 step: '03',
                 title: 'NutriMatch Full-Day Plan',
-                desc: 'The top matching items from the 1,729-food dataset are assembled into Breakfast, Lunch, Dinner, and Snack slots with Swap options.',
+                desc: 'The top matching items from the 1,630-food dataset are assembled into Breakfast, Lunch, Dinner, and Snack slots with Swap options.',
                 highlight: 'Swap & Portion Ready',
               },
             ].map((step, idx) => (
@@ -391,3 +391,4 @@ export default function LandingPage({ onStartPersonalize, onExploreFoods, hasPla
     </div>
   );
 }
+

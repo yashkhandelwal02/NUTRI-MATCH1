@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import {
   Compass,
   Search,
@@ -59,7 +59,7 @@ export default function FoodExplorer({ onSelectFoodForMeal }) {
     setPage(1);
   };
 
-  // Filter and sort across all 1,729 items
+  // Filter and sort across all 1,630 items
   const filteredFoods = useMemo(() => {
     let result = ALL_FOODS;
 
@@ -123,13 +123,13 @@ export default function FoodExplorer({ onSelectFoodForMeal }) {
       {/* Header */}
       <div>
         <div className="inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-3.5 py-1 text-xs font-mono font-bold text-lime">
-          <Compass className="h-3.5 w-3.5" /> 1,729 Verified Laboratory Records
+          <Compass className="h-3.5 w-3.5" /> 1,630 Verified Laboratory Records
         </div>
         <h1 className="mt-2 font-display text-3xl font-extrabold sm:text-4xl text-silk">
           NutriMatch <span className="text-lime">Food Explorer</span>
         </h1>
         <p className="mt-1 text-sm text-white/60">
-          Query verified macronutrients and clinical micronutrients across 1,729 Indian and global foods.
+          Query verified macronutrients and clinical micronutrients across 1,630 Indian and global foods.
         </p>
       </div>
 
@@ -313,7 +313,7 @@ export default function FoodExplorer({ onSelectFoodForMeal }) {
               }}
               className="mt-4 w-full rounded-xl border border-white/10 bg-white/[0.02] py-2 text-center text-xs font-semibold text-white/70 transition hover:border-lime/30 hover:bg-lime/10 hover:text-lime"
             >
-              Inspect All 17 Nutrients →
+              Inspect All 17 Nutrients â†’
             </button>
           </TiltCard>
         ))}
@@ -357,7 +357,7 @@ export default function FoodExplorer({ onSelectFoodForMeal }) {
                 </div>
                 <h3 className="mt-2 font-display text-2xl font-black text-silk">{inspectFood.Food}</h3>
                 <p className="text-xs text-white/40">
-                  Standard Serving: <span className="text-white/80">{inspectFood.Serving}</span> · Weight:{' '}
+                  Standard Serving: <span className="text-white/80">{inspectFood.Serving}</span> Â· Weight:{' '}
                   <span className="text-white/80">{inspectFood['Total Weight (g)']}g</span>
                 </p>
               </div>
@@ -465,3 +465,4 @@ export default function FoodExplorer({ onSelectFoodForMeal }) {
     </div>
   );
 }
+

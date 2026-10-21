@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+﻿import React, { useState, useMemo, useEffect } from 'react';
 import {
   Calendar,
   RotateCcw,
@@ -259,7 +259,7 @@ export default function MealPlanner({
             Interactive <span className="text-lime">Macro Planner</span>
           </h1>
           <p className="mt-1 text-sm text-white/60">
-            Fine-tune serving sizes, swap foods from the 1,729 clinical records, and match your daily target.
+            Fine-tune serving sizes, swap foods from the 1,630 clinical records, and match your daily target.
           </p>
         </div>
 
@@ -280,7 +280,7 @@ export default function MealPlanner({
             onClick={onNavigateToExplorer}
             className="flex items-center gap-2 rounded-xl bg-lime px-5 py-2 text-xs font-extrabold uppercase tracking-wider text-obsidian shadow-glow-lime hover:scale-105 active:scale-95"
           >
-            Browse 1,729 Foods →
+            Browse 1,630 Foods â†’
           </button>
         </div>
       </div>
@@ -404,12 +404,12 @@ export default function MealPlanner({
                       {info.name}
                     </span>
                     <span className="text-xs font-mono text-white/40">{info.time}</span>
-                    <span className="text-xs text-white/50">· {info.quota}</span>
+                    <span className="text-xs text-white/50">Â· {info.quota}</span>
                   </div>
 
                   <h3 className="mt-3 font-display text-2xl font-bold text-silk">{item.food_name}</h3>
                   <p className="mt-1 text-xs text-white/60">
-                    Base: {item.serving} · <span className="text-lime">{item.diet_type}</span> ·{' '}
+                    Base: {item.serving} Â· <span className="text-lime">{item.diet_type}</span> Â·{' '}
                     <span className="font-mono text-cyber-violet">{item.match_score || 99}% Match</span>
                   </p>
 
@@ -496,7 +496,7 @@ export default function MealPlanner({
                   Swap {slotTitles[swappingSlot]?.name}
                 </h3>
                 <p className="text-xs text-white/50">
-                  Showing top clinical alternatives from 1,729 verified records matching your diet.
+                  Showing top clinical alternatives from 1,630 verified records matching your diet.
                 </p>
               </div>
               <button
@@ -522,7 +522,7 @@ export default function MealPlanner({
                       </span>
                     </div>
                     <p className="text-xs text-white/50">
-                      Serving: {candidate.serving} · <span className="text-white/80">{candidate.diet_type}</span>
+                      Serving: {candidate.serving} Â· <span className="text-white/80">{candidate.diet_type}</span>
                     </p>
                   </div>
 
@@ -562,3 +562,4 @@ export default function MealPlanner({
     </div>
   );
 }
+

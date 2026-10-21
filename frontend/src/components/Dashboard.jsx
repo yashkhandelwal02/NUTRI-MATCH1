@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+﻿import React, { useMemo } from 'react';
 import {
   PieChart,
   Activity,
@@ -212,7 +212,7 @@ export default function Dashboard({ result, formData, onNavigateToPlanner, onNav
             Your Personalized <span className="text-lime">Nutrition Dashboard</span>
           </h1>
           <p className="mt-1 text-sm text-white/60">
-            Real-time biometric targets synced with 5D vector-matched foods from our 1,729-item clinical database.
+            Real-time biometric targets synced with 5D vector-matched foods from our 1,630-item clinical database.
           </p>
         </div>
 
@@ -230,7 +230,7 @@ export default function Dashboard({ result, formData, onNavigateToPlanner, onNav
             className="flex items-center gap-2 rounded-xl bg-lime px-5 py-2 text-xs font-extrabold uppercase tracking-wider text-obsidian shadow-glow-lime transition hover:scale-105 active:scale-95"
           >
             <Calendar className="h-4 w-4" />
-            Full Meal Planner →
+            Full Meal Planner â†’
           </button>
         </div>
       </div>
@@ -285,8 +285,8 @@ export default function Dashboard({ result, formData, onNavigateToPlanner, onNav
             <div className="flex items-center justify-between text-xs text-white/60">
               <span>Energy Contribution Ratio</span>
               <span className="font-mono text-white/80">
-                Protein {(actuals.protein * 4 * 100 / actuals.calories || 0).toFixed(0)}% · 
-                Carbs {(actuals.carbs * 4 * 100 / actuals.calories || 0).toFixed(0)}% · 
+                Protein {(actuals.protein * 4 * 100 / actuals.calories || 0).toFixed(0)}% Â· 
+                Carbs {(actuals.carbs * 4 * 100 / actuals.calories || 0).toFixed(0)}% Â· 
                 Fats {(actuals.fats * 9 * 100 / actuals.calories || 0).toFixed(0)}%
               </span>
             </div>
@@ -397,7 +397,7 @@ export default function Dashboard({ result, formData, onNavigateToPlanner, onNav
                     {item.food_name}
                   </h3>
                   <div className="mt-1 text-xs text-white/50">
-                    Portion: <span className="text-white/80">{item.serving}</span> · {item.diet_type}
+                    Portion: <span className="text-white/80">{item.serving}</span> Â· {item.diet_type}
                   </div>
 
                   {/* Macro Pills */}
@@ -432,7 +432,7 @@ export default function Dashboard({ result, formData, onNavigateToPlanner, onNav
                   onClick={onNavigateToPlanner}
                   className="mt-4 w-full rounded-xl border border-white/10 bg-white/[0.03] py-2 text-center text-xs font-bold text-white/70 transition hover:border-lime/30 hover:bg-lime/10 hover:text-lime"
                 >
-                  Adjust / Swap →
+                  Adjust / Swap â†’
                 </button>
               </TiltCard>
             );
@@ -442,3 +442,4 @@ export default function Dashboard({ result, formData, onNavigateToPlanner, onNav
     </div>
   );
 }
+

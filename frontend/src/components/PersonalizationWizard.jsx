@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import {
   User,
   Activity,
@@ -148,7 +148,7 @@ export default function PersonalizationWizard({
         <p className="mt-2 text-sm text-white/60">
           {step === 1 && 'Clinical parameters required for Mifflin-St Jeor basal metabolic calculation.'}
           {step === 2 && 'Determine your Total Daily Energy Expenditure (TDEE) and caloric threshold.'}
-          {step === 3 && 'Filter from 1,729 items according to dietary choices and allergen exclusions.'}
+          {step === 3 && 'Filter from 1,630 items according to dietary choices and allergen exclusions.'}
           {step === 4 && 'Accept system-recommended clinical macros or input custom precision targets.'}
         </p>
 
@@ -293,9 +293,9 @@ export default function PersonalizationWizard({
               <div className="grid gap-2.5 sm:grid-cols-2">
                 {[
                   { key: 'Sedentary', mult: '1.2x', desc: 'Desk job, minimal daily movement' },
-                  { key: 'Lightly Active', mult: '1.375x', desc: '1–3 light workouts per week' },
-                  { key: 'Moderately Active', mult: '1.55x', desc: '3–5 moderate training sessions' },
-                  { key: 'Very Active', mult: '1.725x', desc: '6–7 intense workouts or athletic job' },
+                  { key: 'Lightly Active', mult: '1.375x', desc: '1â€“3 light workouts per week' },
+                  { key: 'Moderately Active', mult: '1.55x', desc: '3â€“5 moderate training sessions' },
+                  { key: 'Very Active', mult: '1.725x', desc: '6â€“7 intense workouts or athletic job' },
                 ].map((act) => (
                   <button
                     key={act.key}
@@ -326,7 +326,7 @@ export default function PersonalizationWizard({
               <div className="grid grid-cols-3 gap-3">
                 {[
                   { key: 'Weight Loss', delta: '-500 kcal', color: 'text-coral' },
-                  { key: 'Maintain Weight', delta: '±0 kcal', color: 'text-lime' },
+                  { key: 'Maintain Weight', delta: 'Â±0 kcal', color: 'text-lime' },
                   { key: 'Muscle Gain', delta: '+300 kcal', color: 'text-tangerine' },
                 ].map((g) => (
                   <button
@@ -555,3 +555,4 @@ export default function PersonalizationWizard({
     </div>
   );
 }
+
