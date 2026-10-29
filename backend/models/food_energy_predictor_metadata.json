@@ -1,0 +1,19 @@
+{
+  "model_type": "RandomForestRegressor",
+  "features": [
+    "Protein (g)",
+    "Carbohydrates (g)",
+    "Sugar (g)",
+    "Fats (g)",
+    "Fibres (g)",
+    "Sodium (mg)",
+    "Calcium (mg)",
+    "Iron (mg)",
+    "Vitamin C (mg)"
+  ],
+  "target": "Energy (kcal)",
+  "test_samples": 326,
+  "mae_kcal": 13.854755496529727,
+  "rmse_kcal": 33.83443639304486,
+  "r2": 0.9744730412215218
+}
