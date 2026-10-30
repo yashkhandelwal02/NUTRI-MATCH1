@@ -1,18 +1,21 @@
+
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
+
 class UserInput(BaseModel):
     age: int = Field(..., ge=10, le=100)
-    gender: str = Field(...)
+    gender: str
     weight_kg: float = Field(..., gt=20, lt=300)
     height_cm: float = Field(..., gt=80, lt=250)
-    activity_level: str = Field("Sedentary")
-    goal: str = Field("Maintain Weight")
-    dietary_preference: str = Field("Veg")
-    allergies: Optional[List[str]] = Field(default=[])
+    activity_level: str = "Sedentary"
+    goal: str = "Maintain Weight"
+    dietary_preference: str = "Veg"
+    allergies: List[str] = Field(default_factory=list)
     custom_calories: Optional[float] = None
     custom_protein_g: Optional[float] = None
     custom_sugar_g: Optional[float] = None
+
 
 class MacroBreakdown(BaseModel):
     daily_calories: float
@@ -20,6 +23,7 @@ class MacroBreakdown(BaseModel):
     carbs_g: float
     fats_g: float
     sugar_g: float
+
 
 class FoodRecommendation(BaseModel):
     food_name: str
@@ -39,10 +43,12 @@ class FoodRecommendation(BaseModel):
     match_score: float
     ingredients: str
 
+
 class MealCategoryPlan(BaseModel):
     meal_type: str
     target_calories: float
     items: List[FoodRecommendation]
+
 
 class FullDayPlan(BaseModel):
     breakfast: MealCategoryPlan
@@ -52,12 +58,15 @@ class FullDayPlan(BaseModel):
     total_plan_calories: float
     total_plan_protein_g: float
 
+
 class RecommendationResponse(BaseModel):
     target_macros: MacroBreakdown
     full_day_plan: FullDayPlan
+
 
 class SwapRequest(BaseModel):
     meal_slot: str
     target_calories: float
     dietary_preference: Optional[str] = "Veg"
-    allergies: Optional[List[str]] = []
+    allergies: List[str] = Field(default_factory=list)
+    exclude_foods: List[str] = Field(default_factory=list)

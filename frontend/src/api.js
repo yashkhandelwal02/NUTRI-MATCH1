@@ -10,16 +10,10 @@ const API_BASE_URL = (
 
 const api = axios.create({
   baseURL: `${API_BASE_URL}/api`,
-  timeout: 20000,
-  headers: {
-    "Content-Type": "application/json",
-  },
 });
-
 /**
  * Request personalized meal recommendations from FastAPI.
- * No hardcoded meal-plan fallback is used, because that can
- * make different users receive the same menu.
+ * No hardcoded meal-plan fallback is used.
  */
 export const getMealRecommendations = async (userData) => {
   try {
@@ -65,6 +59,50 @@ export const swapMealRecommendation = async (
     throw new Error(
       error.response?.data?.detail ||
         "Could not swap this meal. Please try again."
+    );
+  }
+};
+
+/**
+ * Predict estimated calories from nutrition values.
+ *
+ * All nine nutrition fields are required by the backend.
+ * Values must use the units expected by the trained model.
+ */
+export const predictCalories = async ({
+  protein_g,
+  carbohydrates_g,
+  sugar_g,
+  fats_g,
+  fibres_g,
+  sodium_mg,
+  calcium_mg,
+  iron_mg,
+  vitamin_c_mg,
+}) => {
+  try {
+    const response = await api.post("/predict-calories", {
+      protein_g,
+      carbohydrates_g,
+      sugar_g,
+      fats_g,
+      fibres_g,
+      sodium_mg,
+      calcium_mg,
+      iron_mg,
+      vitamin_c_mg,
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error(
+      "NutriMatch calorie prediction failed:",
+      error.response?.data || error.message
+    );
+
+    throw new Error(
+      error.response?.data?.detail ||
+        "Could not predict calories. Please try again."
     );
   }
 };
